@@ -1,0 +1,2 @@
+Contents from youtube channel kablosuzkedi, you can find other contents in https://www.youtube.com/channel/UCYT5QTr38bwp85Pka8YSVIg
+Tutorial playlist url https://www.youtube.com/playlist?list=PL_f2F0Oyaj48jgl98pHuoyxoTgi7gXJ-z

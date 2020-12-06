@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>electron uygulamaları-1</title>
+</head>
+
+<body>
+
+    <input type="text" id="inputValue">
+    <button id="sendBtn">Gönder</button>
+    <button id="openNewWindow">Yeni Pencere Aç</button>
+
+
+
+
+    <script type="text/javascript">
+
+        const electron = require('electron')
+        const { ipcRenderer } = electron;
+
+        //main.html dosyasındaki #sendBtn id'sine sahip butonu seçme
+        let sendBtn = document.querySelector("#sendBtn");
+        //main.html dosyasındaki #inputValue id'sine sahip form nesnesini seçme
+        let inputValue = document.querySelector("#inputValue");
+        //main.html dosyasındaki #openNewWindow id'sine sahip butonu seçme
+        let openNewWindow = document.querySelector("#openNewWindow");
+
+        openNewWindow.addEventListener('click', ()=>{
+            ipcRenderer.send("key:newWindowRequest")
+        })
+
+        //sendBtn event kontrolü
+        sendBtn.addEventListener('click', () => {
+            ipcRenderer.send('key:inputValue', inputValue.value);
+        })
+
+    </script>
+</body>
+
+</html>
